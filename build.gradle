@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+repositories {
+    mavenLocal()
+    maven {
+        url "http://esgcm.hrblock.net/nexus/content/groups/public"
+    }
+    mavenCentral()
+}
+
+group 'com.hrb'
+version '1.0.0'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:2.4.5"
+
+    testCompile ("junit:junit:4.+") {
+        transitive = false
+    }
+    testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
+    testCompile "org.easytesting:fest-assert-core:2.0M10"
+    compile "org.projectlombok:lombok:1.16.10"
+}
+
+test {
+    // following to display logs in console
+    testLogging.showStandardStreams = true
+    testLogging {
+        showStandardStreams = true
+    }
+}
