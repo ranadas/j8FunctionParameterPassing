@@ -13,18 +13,14 @@ import java.util.function.Function;
 /**
  * Created by x148128 on 08/11/2016.
  */
-public class FancyUser {
-    public static void main(String[] args) {
-        FancyUser fancyUser = new FancyUser();
-        fancyUser.lambdaUser();
-    }
-
+public class FunctionalClient {
     public void lambdaUser() {
         HirearchyDataAccess officeDataAccess = getOfficeHa();
         HirearchyDataAccess terrDataAccess = getOfficeTerr();
 
         System.out.println(officeDataAccess.getData(conceptOne));
         System.out.println(terrDataAccess.getData(conceptTwo));
+        System.out.println(terrDataAccess.getData(conceptOne));
         System.out.println(officeDataAccess.getData(conceptThree));
     }
 
